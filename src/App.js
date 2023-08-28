@@ -1,4 +1,4 @@
-import Calendar from './components/Calendar/view/Calendar';
+import { Calendar } from './components/Calendar';
 
 
 function App() {
