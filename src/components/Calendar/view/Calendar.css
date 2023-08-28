@@ -1,0 +1,78 @@
+.wrapper{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.calendar-cell {
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid #e1e4e8;
+    margin: 1px;
+}
+.calendar-cell:hover{
+    border: 1px solid #000;
+}
+
+.light {
+    background-color: #ACD5F2;
+}
+
+.slightly-darker {
+    background-color: #7FA8C9;
+}
+
+.darker {
+    background-color: #527BA0;
+}
+
+.dark {
+    background-color: #254E77;
+}
+
+
+.calendar-cell {
+    position: relative;
+}
+
+.calendar-cell.tooltip::before {
+    content: '';
+    position: absolute;
+    bottom: 75%;
+    left: 30%;
+    transform: translateX(-50%);
+    transform: rotate(180deg);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #000 transparent;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.calendar-cell.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -180%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 1;
+}
+
+.calendar-cell.tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.calendar-cell.tooltip:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
